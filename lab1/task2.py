@@ -27,12 +27,12 @@ def reportFiles(dir, files = []):
         return
     if len(files) == 0:
         files = listdir(dir)
-        print(f"Всего файлов: {len(files)}")
+        print(f"Total files: {len(files)}")
         filesSize = 0
         for f in files:
             filePath = path.join(dir, f)
             filesSize += path.getsize(filePath)
-        print(f"Общий вес: {filesSize/1024} КБ")
+        print(f"Total size: {filesSize/1024} КБ")
     else:
         exist = []
         notExist = []
@@ -44,14 +44,14 @@ def reportFiles(dir, files = []):
                 notExist.append(f)
 
         # Console output
-        print("Существующие файлы:")
+        print("Existing files:")
         if len(exist) == 0:
-            print("Отсутствуют")
+            print("Empty")
         else:
             print("\n".join(exist))
-        print("Несуществующие файлы:")
+        print("Non existing files:")
         if len(notExist) == 0:
-            print("Отсутствуют")
+            print("Empty")
         else:
             print("\n".join(notExist))
 
