@@ -19,3 +19,8 @@ with Image.open("rgbimg.jpg") as image:
     draw = ImageDraw.Draw(image)
     draw.text([5, height - fontSize - 10], "БФУ", fill=(0,0,0,255), font=arial)
     image.show()
+
+    filename = image.filename.split(".")
+    filename.pop()
+    filename = ".".join(filename)
+    image.save(f"{filename}-wm.jpg", "JPEG")
