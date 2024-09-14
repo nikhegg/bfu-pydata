@@ -1,4 +1,9 @@
 from PIL import Image
+from sys import argv
+
+if len(argv) < 2:
+    raise BaseException("Specify file name (e.g. file.jpg)")
+imgPath = argv[1]
 
 rt = gt = bt = 0
 def updateColorAmount(colors):
@@ -15,7 +20,7 @@ def updateColorAmount(colors):
             elif color == "b":
                 bt += 1
 
-with Image.open("rgbimg.jpg") as image:
+with Image.open(imgPath) as image:
     width, height = image.size
     for x in range(width):
         for y in range(height):
