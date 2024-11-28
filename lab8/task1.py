@@ -32,3 +32,5 @@ connection.commit()
 cursor.execute("UPDATE orders SET price=3500.99 WHERE order_code=1")
 cursor.execute("UPDATE vehicles SET color='Yellow' WHERE vehicle_id=1")
 connection.commit()
+
+connection.close()
